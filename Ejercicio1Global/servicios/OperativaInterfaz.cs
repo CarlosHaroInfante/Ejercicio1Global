@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Ejercicio1Global.servicios
 {
-    internal interface BibliotecaInterfaz
+    internal interface OperativaInterfaz
     {
-        public void bibliotecaNueva(List<Biblioteca> listaAntigua);
+        public void darAltaCliente(List<ClientesDto> listaClientes);
 
-        public void bibliotecaExistente(List<Biblioteca> listaAntigua);
     }
 }

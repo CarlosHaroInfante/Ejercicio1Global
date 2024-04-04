@@ -26,6 +26,10 @@ namespace Ejercicio1Global.Dtos
             this.direccion = direccion;
         }
 
+        public Biblioteca()
+        {
+        }
+
         public string ToString()
         {
 

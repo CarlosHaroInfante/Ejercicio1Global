@@ -20,7 +20,20 @@ namespace Ejercicio1Global.servicios
 
             return op;
 
+        }
 
+        public int menuParaBibliotecas()
+        {
+            Console.WriteLine("Opciones de la biblioteca");
+            Console.WriteLine("///////////");
+            Console.WriteLine("[0] - Cerrar Menú");
+            Console.WriteLine("[1] - Dar de alta un nuevo cliente");
+            Console.WriteLine("[2] - Dar de alta un nuevo préstamo");
+            Console.WriteLine("[3] - Dar de alta un nuevo libro");
+            Console.WriteLine("///////////");
+            int op = Convert.ToInt32(Console.ReadLine());
+
+            return op;
 
         }
     }
