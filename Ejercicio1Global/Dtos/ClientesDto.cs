@@ -14,13 +14,14 @@ namespace Ejercicio1Global.Dtos
         string apellidos = "aaaaa";
         string apellido1 = "aaaaa";
         string apellido2 = "aaaaa";
-        DateTime FechaDeNacimiento = new DateTime(31, 12, 9999);
+        DateTime FechaDeNacimiento = new DateTime(9999, 12, 31);
         string dni = "aaaaa";
         string correoElectronico = "aaaaa";
-        DateTime fechaInicioSuspension = new DateTime(31, 12, 9999);
-        DateTime fechaFinSuspensión = new DateTime(31, 12, 9999);
+        DateTime fechaInicioSuspension = new DateTime(9999, 12, 31);
+        DateTime fechaFinSuspensión = new DateTime(9999, 12, 31);
+        long bibliotecaId;
 
-        public ClientesDto(long id, string nombre, string apellidos, DateTime fechaDeNacimiento, string dni, string correoElectronico, DateTime fechaInicioSuspension, DateTime fechaFinSuspensión)
+        public ClientesDto(long id, string nombre, string apellidos, DateTime fechaDeNacimiento, string dni, string correoElectronico, DateTime fechaInicioSuspension, DateTime fechaFinSuspensión, long bibliotecaId)
         {
             this.id = id;
             this.nombre = nombre;
@@ -30,9 +31,11 @@ namespace Ejercicio1Global.Dtos
             this.correoElectronico = correoElectronico;
             this.fechaInicioSuspension = fechaInicioSuspension;
             this.fechaFinSuspensión = fechaFinSuspensión;
+            this.bibliotecaId = bibliotecaId;
             string[] apellidosJuntos = apellidos.Split();
             this.apellido1 = apellidosJuntos[0];
             this.apellido2 = apellidosJuntos[1];
+            
         }
 
         public long Id { get => id; set => id = value; }
@@ -45,9 +48,9 @@ namespace Ejercicio1Global.Dtos
         public string CorreoElectronico { get => correoElectronico; set => correoElectronico = value; }
         public DateTime FechaInicioSuspension { get => fechaInicioSuspension; set => fechaInicioSuspension = value; }
         public DateTime FechaFinSuspensión { get => fechaFinSuspensión; set => fechaFinSuspensión = value; }
-    
+        public long BibliotecaId { get => bibliotecaId; set => bibliotecaId = value; }
 
-    public ClientesDto()
+        public ClientesDto()
         {
 
         }
@@ -56,7 +59,7 @@ namespace Ejercicio1Global.Dtos
             string clienteD = "id: " + this.id + " nombre: " + this.nombre + " apellidos: " + this.apellidos
                     + " DNI: " + this.dni + " Fch Nacimiento: " + this.FechaDeNacimiento +
                     " correoE: " + this.correoElectronico + " Fch Suspensión " + fechaInicioSuspension
-                    + " Fch Fin Suspensión: " + fechaFinSuspensión;
+                    + " Fch Fin Suspensión: " + fechaFinSuspensión + " BibliotecaId: " + bibliotecaId;
 
             return clienteD;
     }

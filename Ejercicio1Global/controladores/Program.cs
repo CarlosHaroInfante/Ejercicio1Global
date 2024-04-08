@@ -34,7 +34,7 @@ namespace Ejercicio1Global.controladores
                         break;
                     case 2:
                         Console.WriteLine("Biblioteca Existente");
-                        bibliotecas.bibliotecaExistente(biblioteca);
+                        bibliotecas.bibliotecaExistente(biblioteca, clientes, libros);
                         break;
                     default:
                         Console.WriteLine("Opción seleccionada erroneamente, intentelo de nuevo.");

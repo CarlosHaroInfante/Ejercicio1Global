@@ -11,6 +11,6 @@ namespace Ejercicio1Global.servicios
     {
         public void bibliotecaNueva(List<Biblioteca> listaAntigua);
 
-        public void bibliotecaExistente(List<Biblioteca> listaAntigua);
+        public void bibliotecaExistente(List<Biblioteca> listaAntigua, List<ClientesDto> listaClientes, List<LibrosDto> librosDtos);
     }
 }

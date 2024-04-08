@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\coco\\Desktop\\Ejercicio1Global\\Ejercicio1Global.csproj": {}
+    "C:\\Users\\Carlos\\Desktop\\Programación\\Ejercicio1Global\\Ejercicio1Global.csproj": {}
   },
   "projects": {
-    "C:\\Users\\coco\\Desktop\\Ejercicio1Global\\Ejercicio1Global.csproj": {
+    "C:\\Users\\Carlos\\Desktop\\Programación\\Ejercicio1Global\\Ejercicio1Global.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\coco\\Desktop\\Ejercicio1Global\\Ejercicio1Global.csproj",
+        "projectUniqueName": "C:\\Users\\Carlos\\Desktop\\Programación\\Ejercicio1Global\\Ejercicio1Global.csproj",
         "projectName": "Ejercicio1Global",
-        "projectPath": "C:\\Users\\coco\\Desktop\\Ejercicio1Global\\Ejercicio1Global.csproj",
-        "packagesPath": "C:\\Users\\coco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\coco\\Desktop\\Ejercicio1Global\\obj\\",
+        "projectPath": "C:\\Users\\Carlos\\Desktop\\Programación\\Ejercicio1Global\\Ejercicio1Global.csproj",
+        "packagesPath": "C:\\Users\\Carlos\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Carlos\\Desktop\\Programación\\Ejercicio1Global\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\coco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Carlos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -60,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

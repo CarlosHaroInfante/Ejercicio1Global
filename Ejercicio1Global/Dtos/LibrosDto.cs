@@ -19,8 +19,9 @@ namespace Ejercicio1Global.Dtos
         int numeroDeLaEdición = 0;
         string editorial = "aaaaa";
         int stock = 99;
+        long bibliotecaId;
 
-        public LibrosDto(long id, string titulo, string subtitulo, string autor, string iSBN, int numeroDeLaEdición, string editorial, int stock)
+        public LibrosDto(long id, string titulo, string subtitulo, string autor, string iSBN, int numeroDeLaEdición, string editorial, int stock, long bibliotecaId)
         {
             this.id = id;
             this.titulo = titulo;
@@ -30,6 +31,7 @@ namespace Ejercicio1Global.Dtos
             this.numeroDeLaEdición = numeroDeLaEdición;
             this.editorial = editorial;
             this.stock = stock;
+            this.bibliotecaId = bibliotecaId;
             string[] arrayNombre = autor.Split(" ");
             this.autorN = arrayNombre[0];
             this.autorA1 = arrayNombre[1];
@@ -47,7 +49,9 @@ namespace Ejercicio1Global.Dtos
         public int NumeroDeLaEdición { get => numeroDeLaEdición; set => numeroDeLaEdición = value; }
         public string Editorial { get => editorial; set => editorial = value; }
         public int Stock { get => stock; set => stock = value; }
-        
+
+        public long BibliotecaId { get => bibliotecaId; set => bibliotecaId = value; }
+
 
         public LibrosDto()
         {
@@ -60,7 +64,7 @@ namespace Ejercicio1Global.Dtos
 
             string libroN = "id: " + this.id + " Título: " + this.titulo + " Subtítulo: " + this.subtitulo + " autor: " +
                 this.autor + " ISBN: " + this.ISBN + " Número de Edición: " + this.numeroDeLaEdición +
-                " Editorial: " + this.editorial + " Stock: " + this.stock;
+                " Editorial: " + this.editorial + " Stock: " + this.stock + " biblioteca: " + BibliotecaId;
 
             return libroN;
         }

@@ -28,12 +28,13 @@ namespace Ejercicio1Global.Dtos
 
         public Biblioteca()
         {
+
         }
 
         public string ToString()
         {
 
-            string nom = "id: " + this.id + "nombre: " + this.Nombre + "dirección: " + this.Direccion;
+            string nom = "id: " + this.id + " nombre: " + this.Nombre + " dirección: " + this.Direccion;
             return nom;
         }
 
