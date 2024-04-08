@@ -10,13 +10,10 @@ namespace Ejercicio1Global.controladores
         static void Main(string[] args)
         {
             List<Biblioteca> biblioteca = new List<Biblioteca>();
-            List<ClientesDto> clientes = new List<ClientesDto>();
-            List<LibrosDto> libros = new List<LibrosDto>();
-            List<PrestamosDto> prestamos = new List<PrestamosDto>();
             MenuInterfaz menu = new MenuImplementacion();
-            BibliotecaInterfaz bibliotecas = new BibliotecaImplementacion();
+            BibliotecaInterfaz biblio = new BibliotecaImplementacion();
 
-            bool cerrarMenu = false;
+            bool cerrarMenu = true;
 
             while (!cerrarMenu)
             {
@@ -30,11 +27,11 @@ namespace Ejercicio1Global.controladores
                         break;
                     case 1:
                         Console.WriteLine("Añadir nueva biblioteca");
-                        bibliotecas.bibliotecaNueva(biblioteca);
+                        biblio.bibliotecaNueva(biblioteca);
                         break;
                     case 2:
                         Console.WriteLine("Biblioteca Existente");
-                        bibliotecas.bibliotecaExistente(biblioteca, clientes, libros, prestamos);
+                        biblio.bibliotecaCreada(biblioteca);
                         break;
                     default:
                         Console.WriteLine("Opción seleccionada erroneamente, intentelo de nuevo.");

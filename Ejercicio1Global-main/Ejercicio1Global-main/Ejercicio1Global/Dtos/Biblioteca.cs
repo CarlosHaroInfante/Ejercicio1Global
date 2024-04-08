@@ -19,22 +19,18 @@ namespace Ejercicio1Global.Dtos
         public long Id { get => id; set => id = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Direccion { get => direccion; set => direccion = value; }
-       public Biblioteca(long id, string nombre, string direccion)
-        {
-            this.id = id;
+       public Biblioteca(string nombre, string direccion)
+        {   
             this.nombre = nombre;
             this.direccion = direccion;
         }
 
-        public Biblioteca()
-        {
-
-        }
+        public Biblioteca() { }
 
         public string ToString()
         {
 
-            string nom = "id: " + this.id + " nombre: " + this.Nombre + " dirección: " + this.Direccion;
+            string nom = "id: " + this.id + "nombre: " + this.Nombre + "dirección: " + this.Direccion;
             return nom;
         }
 

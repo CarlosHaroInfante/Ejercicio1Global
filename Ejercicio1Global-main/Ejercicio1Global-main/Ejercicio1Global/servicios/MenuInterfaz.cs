@@ -9,7 +9,5 @@ namespace Ejercicio1Global.servicios
     internal interface MenuInterfaz
     {
         public int menuBiblioteca();
-
-        public int menuParaBibliotecas();
     }
 }

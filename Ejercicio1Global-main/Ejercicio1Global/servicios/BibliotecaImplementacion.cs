@@ -1,7 +1,6 @@
 ﻿using Ejercicio1Global.Dtos;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,8 +9,6 @@ namespace Ejercicio1Global.servicios
 {
     internal class BibliotecaImplementacion : BibliotecaInterfaz
     {
-        
-
         private long idAutogengerado(List<Biblioteca> listaAntigua)
         {
 
@@ -30,57 +27,98 @@ namespace Ejercicio1Global.servicios
         }
         public void bibliotecaNueva(List<Biblioteca> listaAntigua)
         {
-            Biblioteca bibliotecaN = nuevaBiblio();
+            Biblioteca bibliotecaN = new Biblioteca();
+            Console.WriteLine("Biblioteca Nueva, ingrese los siguientes datos: ");
 
-            listaAntigua.Add(bibliotecaN);
-            
-        }
+            long id = idAutogengerado(listaAntigua);
+            bibliotecaN.Id = id;
 
-        private Biblioteca nuevaBiblio()
-        {
-
-            Console.WriteLine("Añade una nueva biblioteca al registro.");
-
-            Biblioteca bibliotecaNueva = new Biblioteca();
             Console.WriteLine("Nombre de la biblioteca: ");
-            bibliotecaNueva.Nombre = Console.ReadLine();
+            string nombreBiblio = Console.ReadLine();
+            bibliotecaN.Nombre = nombreBiblio;
 
             Console.WriteLine("Dirección de la biblioteca: ");
-            bibliotecaNueva.Direccion = Console.ReadLine();
+            string direccion = Console.ReadLine();
+            bibliotecaN.Direccion = direccion;
 
-            bibliotecaNueva.Id = idAutogengerado();
+            listaAntigua.Add(bibliotecaN);
 
-            return bibliotecaNueva;
-            
         }
 
-        public string bibliotecaCreada(List<Biblioteca> listaAntigua)
+        public void bibliotecaExistente(List<Biblioteca> listaAntigua, List<ClientesDto> listaClientes, List<LibrosDto> listaLibros, List<PrestamosDto> listaPrestamos)
         {
-
-            Console.WriteLine("Bibliotecas ya existentes");
-            Biblioteca bibliotecasCreadas = new Biblioteca();
-
-            long bibliotecaId = bibliotecaNueva().Id;
-
-            foreach (Biblioteca biblioteca in listaAntigua)
+            MenuInterfaz menu = new MenuImplementacion();
+            OperativaInterfaz op = new OperativaImplementacion();
+           
+            foreach (Biblioteca bibliotecasid in listaAntigua)
             {
-                if (biblioteca.Id.Equals(bibliotecaId))
+
+                Console.WriteLine(bibliotecasid.ToString());
+            }
+            
+            Console.WriteLine("Biblioteca existente, ingrese en id de la biblioteca para entrar");
+
+            long idBE = Convert.ToInt64(Console.ReadLine());
+            
+
+            foreach (Biblioteca bibliotecas in listaAntigua)
+            {
+    
+
+                if (idBE.Equals(bibliotecas.Id))
                 {
-                    Console.WriteLine("Entra a la interfaz de la biblioteca " + biblioteca.Id);
+                    Console.WriteLine("Entrando en la biblioteca: " + bibliotecas.Nombre);
+
+                    bool cerrarMenu = false;
+
+                    while (!cerrarMenu)
+                    {
+                        int num = menu.menuParaBibliotecas();
+
+                        switch (num)
+                        {
+                            case 0:
+                                cerrarMenu = true;
+                                break;
+                            case 1:
+                                Console.WriteLine("Alta Cliente: ");
+                                op.darAltaCliente(listaClientes, listaAntigua);
+                                break;
+                            case 2:
+                                Console.WriteLine("Alta Libro: ");
+                                op.darAltaLibro(listaLibros, listaAntigua);
+                                break;
+                            case 3:
+                                Console.WriteLine("Alta Prestamo: ");
+                                op.darAltaPrestamo(listaPrestamos, listaAntigua, listaClientes, listaLibros);
+                                break;
+                            case 4:
+                                Console.WriteLine("Entrega libro");
+                                break;
+                            case 5:
+                                Console.WriteLine("Libros de la biblioteca");
+                                break;
+                            default:
+                                Console.WriteLine("Ninguna opción válida");
+                                break;
+
+
+                        }
+
+
+                    }
 
                 }
                 else
                 {
-                    Console.WriteLine("El id de la biblioteca no coincide con ningún id existente");
+                    Console.WriteLine("Ninguna biblioteca coincide con el id ingresado");
                 }
 
             }
 
-           
-
-
-
         }
+
+
 
     }
 }
